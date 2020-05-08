@@ -3,12 +3,14 @@ var generateBtn = document.querySelector("#generate");
 
 function writePassword() {
 
- 
+ //find out how many charcters the user wants in their password
   var charNum = prompt("how many characters do you want your password to be? Eneter a number between 8 and 128");
 
+  //confirm uppercase, lowercase, number, special characters
+  //create arrays for passowrd to build random sequence from
   var confirmUpper = confirm("would you like your password to include uppercase letters?");
   if (confirmUpper){
-    var upperSet = ["A", "B","C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S","T", "U", "V", "W", "X", "Y", "Z"]
+    var upperSet = ["A", "B","C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S","T", "U", "V", "W", "X", "Y", "Z"];
   }
   
   var confirmLower = confirm("would you like your password to include lowercase letters?");
@@ -25,26 +27,32 @@ function writePassword() {
   if(confirmSpecial){
     var specialSet = [" ","!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-",".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~" ];
   }    
-  
+  //use password length to determin how many characters in password- must be integer value
   var passwordLength = parseInt(charNum);
 
+// compile all the strings into one set 
+//covert sets into strings so they can be used to make the password
   var randomSet = [upperSet.toString|| lowerSet.toString, numberSet.toString, specialSet.toString];
-  console.log(randomSet)
+  console.log(randomSet);
   
+  //use random formula to get a random selection from previous set// 
   var randomChar = randomSet[Math.floor(Math.random()* randomSet.length)];
-  console.log(randomChar)
+  console.log(randomChar);
   
-  charGen()
-
+  //set password length
   for (var i = 0; i < passwordLength; i ++){
-    console.log(charGen(i))}
+    return writePassword
+  }
 
+  //write the password... i know that something isnt working in the last few steps
+  //my syntax or formulas are off but its getting close to due time so i want to have something turnedin
   writePassword();
-  console.log(writepassword)
+  console.log(writePassword);
 
+  //this points to the right place but isnt coming up, mostly because the above is buggy
 writePassword = document.querySelector("#password");
 console.log(characterGen * 1);
-console.log(writePassword)
+console.log(writePassword);
 }
  
 
@@ -52,75 +60,3 @@ console.log(writePassword)
 generateBtn.addEventListener("click", writePassword);
 
 
-// passwordText.value = password;
-
-
-
-
-
-// var password = generatePassword();
-// for (var i = 0; i < length; i++){
-//   password += (carSet + charSet2 + charSet3 + charSet4).charAt(Math.floor(Math.random() *charNumber));
-// }
-
-// console.log(password)
-
-
-// // Add event listener to generate button
-// ;
-
-// // //GIVEN I need a new, secure password
-// // WHEN I click the button to generate a password
-
-
-// // THEN I am presented with a series of prompts for password criteria
-// // WHEN prompted for password criteria
-// // THEN I select which criteria to include in the password
-
-// // WHEN prompted for the length of the password
-// // THEN I choose a length of at least 8 characters and no more than 128 characters
-
-
-// // WHEN prompted for character types to include in the password
-// // THEN I choose lowercase, uppercase, numeric, and/or special characters
-
-
-// // WHEN I answer each prompt
-// // THEN my input should be validated and at least one character type should be selected
-// // WHEN all prompts are answered
-// // THEN a password is generated that matches the selected criteria
-// // WHEN the password is generated
-// // THEN the password is either displayed in an alert or written to the page
-
-// //var num = Math.floor(Math.random() * 10) + 1
-// // string leters
-
-
-
-
-
-
-
-// // var retVal = "";
-// //   for (var i = 0; i < length; i++) {
-// //     //picks a character within charSet at index of random number
-// //     retVal += charSet.charAt(Math.floor(Math.random() * charSet.length));
-// //   }
-
-// // console.log(retVal)
-// //gernerate random password
-
-// // Write password to the #password input
-
-  
-      //     function userChar(){
-//       var userUpper = upperSet[Math.floor(Math.random()* upperSet.length)];
-//       var userLower = lowerSet[Math.floor(Math.random()* lowerSet.length)];
-//       var userNumber = numberSet[Math.floor(Math.random()* numberSet.length)];
-//       var  userSpecial = specialSet[Math.floor(Math.random()* specialSet.length)];
-//     return passwordText.value; 
-//     }{
-//       
-//     }
-// }
-// function characterGen(){
